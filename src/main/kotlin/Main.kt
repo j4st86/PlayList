@@ -4,9 +4,9 @@ import org.w3c.dom.Node
 import org.w3c.dom.NodeList
 import javax.xml.parsers.DocumentBuilderFactory
 
-fun main(args: Array<String>){
+fun main(){
 
-    val xmlFile: File = File("P:\\Programms\\java code\\PlaylistXML\\REKORDBOX.xml")
+    val xmlFile = File("P:\\Programms\\java code\\PlaylistXML\\PlayList\\REKORDBOX.xml")
     val xmlDoc: Document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(xmlFile)
 
     xmlDoc.documentElement.normalize()
@@ -22,7 +22,6 @@ fun main(args: Array<String>){
     println("")
     println(root.getFull())
     println("")
-
 
     val rootChild: NodeList = rootNode.childNodes
     for(i in 0 until rootChild.length){

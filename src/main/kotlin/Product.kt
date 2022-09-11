@@ -1,4 +1,4 @@
-class Product (val str : String) {
+//data class Product (var str : String) {
 
     /* Need Overrided Strings to sout this ->
 
@@ -6,4 +6,4 @@ class Product (val str : String) {
     Version="5.7.0"
     Company="Pioneer DJ" */
 
-}
+//}
