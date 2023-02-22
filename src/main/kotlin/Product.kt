@@ -1,4 +1,4 @@
-//data class Product (var str : String) {
+data class Product (var productName : String) {
 
     /* Need Overrided Strings to sout this ->
 
@@ -6,4 +6,4 @@
     Version="5.7.0"
     Company="Pioneer DJ" */
 
-//}
+}
