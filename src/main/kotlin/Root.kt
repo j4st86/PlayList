@@ -4,10 +4,6 @@ data class Root (var mainName: String) {
 
     var attributesValue: String = ""
 
-    fun getName(): String {
-        return "$mainName"
-    }
-
     fun getVersion(): String {
         return "$attributesName -> $attributesValue"
     }
