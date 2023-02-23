@@ -1,15 +1,37 @@
+import org.w3c.dom.Node
+import org.w3c.dom.NodeList
+
 data class Root (var mainName: String) {
 
-    var attributesName: String = ""
+    fun getChildren(mainNode : Node) {
 
-    var attributesValue: String = ""
+        val nodeChild : NodeList = mainNode.childNodes
 
-    fun getVersion(): String {
-        return "$attributesName -> $attributesValue"
+        repeat(nodeChild.length) { indexNode ->
+
+            if (nodeChild.item(indexNode).nodeType == Node.ELEMENT_NODE) {
+
+                println(nodeChild.item(indexNode).nodeName)
+
+                getAttributes(nodeChild.item(indexNode))
+
+            }
+
+            if (nodeChild.item(indexNode).hasChildNodes()) getChildren(nodeChild.item(indexNode))
+
+        }
     }
 
-    fun getFull(): String{
-        return "$mainName -> $attributesName -> $attributesValue"
-    }
+    fun getAttributes(nodeItem : Node) {
 
+        repeat(nodeItem.attributes.length) { indexAttributes ->
+
+            if (nodeItem.attributes.equals(null))
+                return
+
+            println("  ${nodeItem.attributes.item(indexAttributes).nodeName} -> " +
+                    "${nodeItem.attributes.item(indexAttributes).nodeValue}",)
+
+        }
+    }
 }
